@@ -1,0 +1,8 @@
+{
+  "name": "amorgos-lustrum",
+  "version": "1.0.0",
+  "description": "Amorgos Lustrum 2027 — statische website",
+  "scripts": {
+    "dev": "npx serve . --listen 3000 --no-clipboard"
+  }
+}
