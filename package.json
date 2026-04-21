@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "Amorgos Lustrum 2027 — statische website",
   "scripts": {
-    "dev": "npx serve . --listen 3000 --no-clipboard"
+    "dev": "npx serve . --listen 3000 --no-clipboard",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0"
   }
 }

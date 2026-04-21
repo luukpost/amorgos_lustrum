@@ -9,6 +9,7 @@ description: Amorgos Lustrum Project Conventions
 Static website for the Amorgos sailing association's lustrum trip 2027.
 Domain: `lustrum.amorgos.nl` (GitHub Pages)
 Stack: Vanilla HTML + CSS + Vue 3 (CDN) + Vue Router 4 (CDN) — no build step.
+**Design approach: Mobile-first.** All layouts and styles are designed for small screens first, then enhanced for larger screens using `min-width` media queries.
 
 ## File Structure
 ```
@@ -39,8 +40,16 @@ uploads/            # Static assets (images, logo)
 - Route meta `title` drives `document.title` via `router.afterEach`
 - Add new routes in `src/router/index.js`
 
+## Mobile-First
+- **Always design for mobile first** — base styles target small screens (≥320px)
+- Use `min-width` media queries to scale up, never `max-width` to scale down
+- Touch targets must be at least 44×44px
+- Test layouts at 375px (iPhone), 768px (tablet), and 1280px (desktop) as reference breakpoints
+- Use relative units (`rem`, `em`, `%`, `vw`, `vh`) over fixed `px` where possible
+- Use `clamp()` for fluid typography and spacing
+
 ## Styling
-- Single global stylesheet: `assets/css/main.css`
+- **Single global stylesheet:** `assets/css/main.css`
 - Color tokens (use these, do not invent new colors):
   - `#FFD200` — Primary yellow (text, accents)
   - `#E30613` — Secondary red (reserve)

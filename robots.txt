@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lustrum.amorgos.nl/sitemap.xml
