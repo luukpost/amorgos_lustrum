@@ -3,7 +3,6 @@
 body {
   background: #f0f6fc;
   font-family: 'Open Sans', sans-serif;
-  overflow: hidden;
 }
 
 /* Subtle wave background */
@@ -31,17 +30,25 @@ body::before {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  gap: 48px;
+  gap: 0;
   padding: 40px 20px;
   text-align: center;
 }
 
+.content-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .logo-wrap {
   animation: floatIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  margin-bottom: 0;
 }
 
 .logo-wrap img {
-  width: min(560px, 90vw);
+  width: auto;
+  max-width: min(560px, 90vw);
   height: auto;
   border: none;
   outline: none;
