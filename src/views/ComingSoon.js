@@ -1,5 +1,5 @@
 const ComingSoon = {
-  components: { OctoMascot },
+  components: { OctoMascot, ComingSoonLabel },
   template: `
     <div class="container">
       <div class="content-block">
@@ -7,7 +7,8 @@ const ComingSoon = {
           <octo-mascot />
         </div>
         <div class="coming-soon">
-          <div class="label">Coming Soon</div>
+          <coming-soon-label />
+
           <div class="subtitle">2 tot 9 oktober 2027 &mdash; Lefkas</div>
           <div class="dots">
             <span></span><span></span><span></span>

@@ -179,6 +179,158 @@ body::before {
   text-wrap: nowrap;
 }
 
+/* ---------------------------------------------------------------
+   Schatkaartroute — easter egg op de O van "Coming"
+   --------------------------------------------------------------- */
+
+.label-wrap {
+  position: relative;
+}
+
+.label-o {
+  position: relative;
+  display: inline-block;
+}
+
+/* Klikzone in het hart van de O. Minimaal 44x44px, ook als de
+   fluid font-size op kleine schermen naar 40px zakt. */
+.label-o-hit {
+  position: absolute;
+  left: 50%;
+  top: 53%;
+  z-index: 3;
+  width: max(44px, 0.5em);
+  height: max(44px, 0.5em);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.label-o-hit:focus-visible {
+  background: rgba(227, 6, 19, 0.3);
+}
+
+.treasure {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.treasure-dot {
+  fill: #E30613;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: treasureDot 3.4s ease-out both;
+}
+
+@keyframes treasureDot {
+  0%   { opacity: 0; transform: scale(0); }
+  10%  { opacity: 1; transform: scale(1.5); }
+  18%  { transform: scale(1); }
+  84%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.4); }
+}
+
+.treasure-map {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: treasureMap 4.1s 0.8s ease-out both;
+}
+
+@keyframes treasureMap {
+  0%   { opacity: 0; transform: scale(0) rotate(-40deg); }
+  12%  { opacity: 1; transform: scale(1.25) rotate(6deg); }
+  22%  { transform: scale(1) rotate(0deg); }
+  86%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.6); }
+}
+
+.treasure-paper {
+  fill: #FFD200;
+  stroke: #000918;
+  stroke-width: 2.4;
+  stroke-linejoin: round;
+}
+
+.treasure-fold {
+  fill: none;
+  stroke: #000918;
+  stroke-width: 1.6;
+  opacity: 0.55;
+}
+
+.treasure-trail {
+  fill: none;
+  stroke: #E30613;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-dasharray: 0.1 3.4;
+}
+
+.treasure-x {
+  fill: none;
+  stroke: #E30613;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
+
+/* Piratenhoedjes op de twee O's waar de reis tussen loopt */
+.treasure-hat {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: treasureHat 3.3s ease-out both;
+}
+
+@keyframes treasureHat {
+  0%   { opacity: 0; transform: translateY(35%) scale(0.4) rotate(-18deg); }
+  9%   { opacity: 1; transform: translateY(-8%) scale(1.12) rotate(5deg); }
+  17%  { transform: translateY(0) scale(1) rotate(0deg); }
+  90%  { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(20%) scale(0.7); }
+}
+
+.hat-felt {
+  fill: #000918;
+}
+
+.hat-band {
+  fill: none;
+  stroke: #E30613;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.hat-skull,
+.hat-jaw {
+  fill: #fff;
+}
+
+.hat-eye {
+  fill: #000918;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .treasure-dot,
+  .treasure-map,
+  .treasure-hat {
+    animation: treasureFade 4.9s ease both;
+    animation-delay: 0s !important;
+  }
+
+  @keyframes treasureFade {
+    0%, 100% { opacity: 0; }
+    8%, 88%  { opacity: 1; }
+  }
+}
+
 .dots {
   display: flex;
   gap: 10px;

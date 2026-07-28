@@ -29,6 +29,7 @@ export default [
     languageOptions: {
       globals: {
         OctoMascot: 'readonly',
+        ComingSoonLabel: 'readonly',
       },
     },
   },
