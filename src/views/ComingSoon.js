@@ -1,9 +1,10 @@
 const ComingSoon = {
+  components: { OctoMascot },
   template: `
     <div class="container">
       <div class="content-block">
         <div class="logo-wrap">
-          <img src="uploads/Octo Chill.png" alt="Amorgos — Plezier in zeilen" />
+          <octo-mascot />
         </div>
         <div class="coming-soon">
           <div class="label">Coming Soon</div>

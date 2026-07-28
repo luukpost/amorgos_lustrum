@@ -24,20 +24,20 @@ export default [
     },
   },
   {
-    // router/index.js uses ComingSoon as a global from the view scripts
-    files: ['src/router/index.js'],
+    // views use the components defined in src/components/*.js as globals
+    files: ['src/views/*.js'],
     languageOptions: {
       globals: {
-        ComingSoon: 'readonly',
+        OctoMascot: 'readonly',
       },
     },
   },
   {
-    // app.js uses router defined in router/index.js
+    // app.js uses ComingSoon defined in the view scripts
     files: ['src/app.js'],
     languageOptions: {
       globals: {
-        router: 'readonly',
+        ComingSoon: 'readonly',
       },
     },
   },
