@@ -120,12 +120,60 @@ body::before {
   100% { transform: rotate(-4deg) scaleY(0); }
 }
 
-/* Klikzone: exact de vorm van de pet, schaalt mee met de afbeelding.
-   Op 375px breed is dit ruim 85x110px — voorbij de 44x44px richtlijn. */
-.octo-cap {
+/* Rondje draaien om het hart van de zwemband, niet om het midden van de
+   afbeelding — daarboven zit alleen de kop. Eerst een kleine aanloop
+   terug, dan de hele draai. */
+.octo.is-spinning {
+  animation: octoSpin 1.8s ease-in-out both;
+  transform-origin: 50% 70%;
+}
+
+/* Het krimpen is niet alleen sier: gedraaid steken de hoeken verder uit
+   dan de afbeelding breed is, en op mobiel (90vw) zou dat de pagina
+   horizontaal laten overlopen. Op ~0.8 blijft de draai binnen beeld. */
+@keyframes octoSpin {
+  0%   { transform: rotate(0deg) scale(1); }
+  10%  { transform: rotate(-20deg) scale(0.9); }
+  28%  { transform: rotate(80deg) scale(0.8); }
+  55%  { transform: rotate(200deg) scale(0.79); }
+  80%  { transform: rotate(310deg) scale(0.82); }
+  93%  { transform: rotate(352deg) scale(0.93); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Klikzone van de zwemband: het silhouet van de afbeelding vanaf net
+   onder de kop, dus de band met de tentakels die eroverheen liggen. */
+.octo-ring {
   position: absolute;
   inset: 0;
   z-index: 2;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  clip-path: polygon(
+    0.5% 63.2%, 2.2% 60.5%, 4.3% 59.7%, 8.4% 53.3%, 90.4% 53.3%,
+    94% 58%, 95.8% 63%, 97.7% 62.7%, 99.1% 65%, 99.1% 65.5%,
+    97.9% 68.2%, 96.3% 69%, 95.4% 76.2%, 93.1% 82%, 89.8% 86.5%,
+    84.2% 91.1%, 65.7% 97.6%, 45.4% 99.1%, 25.2% 95.6%, 12.7% 89%,
+    5.4% 80.3%, 3.3% 74%, 2.8% 66.3%, 0.5% 63.8%
+  );
+}
+
+.octo-ring:focus-visible {
+  background: rgba(255, 210, 0, 0.3);
+}
+
+/* Klikzone: exact de vorm van de pet, schaalt mee met de afbeelding.
+   Op 375px breed is dit ruim 85x110px — voorbij de 44x44px richtlijn.
+   Ligt boven de zwemband, zodat de pet daar wint waar ze overlappen. */
+.octo-cap {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
   margin: 0;
   padding: 0;
   border: 0;
@@ -157,6 +205,17 @@ body::before {
   @keyframes octoWaveCalm {
     0%, 100% { opacity: 0; }
     15%, 85% { opacity: 1; }
+  }
+
+  /* Een hele omwenteling is te veel beweging; een klein wiegen volstaat */
+  .octo.is-spinning {
+    animation: octoSpinCalm 1.8s ease-in-out both;
+  }
+
+  @keyframes octoSpinCalm {
+    0%, 100% { transform: rotate(0deg); }
+    30%      { transform: rotate(-6deg); }
+    70%      { transform: rotate(6deg); }
   }
 }
 
