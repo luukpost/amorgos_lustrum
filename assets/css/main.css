@@ -171,7 +171,11 @@ body::before {
 .label {
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
-  font-size: clamp(40px, 8vw, 80px);
+  /* De ondergrens van 40px is breder dan een 320px-scherm aankan:
+     "COMING SOON" is dan 322px en past niet naast de 2x20px padding.
+     De extra bovengrens laat de titel onder ~385px alsnog meekrimpen;
+     daarboven verandert er niets. */
+  font-size: min(clamp(40px, 8vw, 80px), 10.4vw);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #FFD200;

@@ -13,7 +13,9 @@
 - **Lettertype:** Open Sans (Google Fonts)
 - **Gewicht:** 700 (bold) en 800 (extrabold)
 - **Coming Soon tekst:** `font-weight: 800`, `text-transform: uppercase`, `letter-spacing: 0.04em`
-- **Minimale fontgrootte:** `clamp(40px, 8vw, 80px)` voor hoofdtekst
+- **Fontgrootte hoofdtekst:** `min(clamp(40px, 8vw, 80px), 10.4vw)` — de
+  bovengrens laat de titel onder ~385px meekrimpen, want de ondergrens van
+  40px past niet op een 320px-scherm
 
 ## Logo
 - Bestandsnaam: `logo.png`
