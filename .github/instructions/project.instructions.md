@@ -26,7 +26,7 @@ uploads/            # Static assets (images, logo)
 
 ## HTML, CSS and JavaScript
 - Every page is a plain `.html` file in the root; write content directly in the HTML
-- Links between pages are normal links, e.g. `<a href="programma.html">`
+- Links between pages are normal links without `.html` (GitHub Pages serves `programma.html` at `/programma`), e.g. `<a href="/programma">`
 - No Vue, React or other frameworks, no router, no templating
 - JavaScript only for interaction that HTML/CSS cannot do; plain JS, loaded with `defer`, in `assets/js/`
 - Drafts: a page with `<script>window.location.replace('/');</script>` in the head is not live yet; remove that line to publish it
