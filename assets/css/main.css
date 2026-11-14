@@ -452,7 +452,7 @@ body::before {
   padding: 0.9em 2em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
-  font-size: clamp(14px, 3vw, 20px);
+  font-size: clamp(21px, 4.5vw, 30px);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1;
@@ -483,6 +483,24 @@ body::before {
   gap: clamp(28px, 6vh, 56px);
 }
 
-.subtitle-top {
-  animation: floatIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+.subtitle-home {
+  font-size: clamp(21px, 4.5vw, 30px);
+  line-height: 1.4;
+  animation: floatIn 0.9s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Telefoon: datum en plaats op twee nette regels, zonder streepje */
+.subtitle-home span {
+  display: block;
+}
+
+.subtitle-home .subtitle-sep {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .subtitle-home span,
+  .subtitle-home .subtitle-sep {
+    display: inline;
+  }
 }
