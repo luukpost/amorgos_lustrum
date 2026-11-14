@@ -44,9 +44,7 @@ uploads/            # Static assets (images, logo)
 - Color tokens (use these, do not invent new colors):
   - `#FFD200` — Primary yellow (text, accents)
   - `#E30613` — Secondary red (reserve)
-  - `#f0f6fc` — Page background
-  - `#b8d4e8` — Gradient bottom
-  - `#d6e9f7` — Gradient top
+  - `#ffffff` — Page background (plain white, no gradient)
 - Font: Open Sans 700/800 (Google Fonts CDN)
 - Responsive logo width: `min(560px, 90vw)`
 

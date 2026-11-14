@@ -1,19 +1,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: #f0f6fc;
+  background: #fff;
   font-family: 'Open Sans', sans-serif;
-}
-
-/* Subtle wave background */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 120% 60% at 50% 110%, #b8d4e8 0%, transparent 60%),
-    radial-gradient(ellipse 80% 40% at 20% 0%, #d6e9f7 0%, transparent 50%);
-  z-index: 0;
 }
 
 #app {
@@ -112,7 +101,6 @@ body::before {
   display: block;
   width: 100%;
   border: 0;
-  border-radius: 12px;
   background: #fff;
 }
 
