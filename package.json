@@ -4,8 +4,8 @@
   "description": "Amorgos Lustrum 2027 — statische website",
   "scripts": {
     "dev": "npx serve . --listen 3000 --no-clipboard",
-    "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix"
+    "lint": "eslint assets/js/",
+    "lint:fix": "eslint assets/js/ --fix"
   },
   "type": "module",
   "devDependencies": {
