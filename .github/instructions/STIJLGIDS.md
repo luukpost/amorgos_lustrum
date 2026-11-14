@@ -45,4 +45,4 @@ background-color: #f0f6fc;
 ## Tone of voice / copy
 - Taal: Nederlands (maar "Coming Soon" in het Engels)
 - Simpel en rustig — geen overbodige tekst
-- Paginatitel: `Coming soon`
+- Paginatitel homepage: `Amorgos Lustrum`
