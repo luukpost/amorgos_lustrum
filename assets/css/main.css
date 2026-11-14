@@ -179,9 +179,23 @@ body::before {
 }
 
 /* Homepage: 30-jarig logo, zonder animaties */
+/* Het logo is precies zo breed als de datumregel: het blok krijgt de
+   breedte van de datum, en het logo telt zelf niet mee voor die breedte */
+.content-block:has(.logo-30) {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.logo-wrap:has(.logo-30) {
+  contain: inline-size;
+  width: 100%;
+}
+
 .logo-wrap .logo-30 {
-  width: min(297px, 80vw);
+  display: block;
+  width: 100%;
   max-width: none;
+  height: auto;
   filter: none;
 }
 
