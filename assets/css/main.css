@@ -102,17 +102,6 @@ body::before {
   gap: 32px;
 }
 
-.page-logo {
-  animation: floatIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-  line-height: 0;
-}
-
-.page-logo img {
-  width: min(220px, 60vw);
-  height: auto;
-  filter: drop-shadow(0 8px 32px rgba(90, 140, 180, 0.18));
-}
-
 .form-wrap {
   width: 100%;
   max-width: 640px;
