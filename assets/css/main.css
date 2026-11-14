@@ -504,3 +504,24 @@ body::before {
     display: inline;
   }
 }
+
+/* Homepage: 30-jarig logo, zonder animaties */
+.logo-wrap .logo-30 {
+  width: min(297px, 80vw);
+  max-width: none;
+  filter: none;
+}
+
+.logo-wrap:has(.logo-30),
+.subtitle-home,
+.coming-soon:has(.cta-button) {
+  animation: none;
+}
+
+.cta-button {
+  transition: none;
+}
+
+.cta-button:hover {
+  transform: none;
+}
