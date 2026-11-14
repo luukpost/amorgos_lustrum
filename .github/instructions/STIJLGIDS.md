@@ -5,7 +5,9 @@
 |--------------|-----------|-------------------------------|
 | Geel         | `#FFD200` | Primaire tekstkleur, accenten  |
 | Rood         | `#E30613` | Secundaire kleur (reserve)     |
-| Wit          | `#ffffff` | Achtergrond pagina             |
+| Lichtblauw   | `#f0f6fc` | Achtergrond pagina             |
+| Blauw licht  | `#b8d4e8` | Gradient achtergrond (onder)   |
+| Blauw zacht  | `#d6e9f7` | Gradient achtergrond (boven)   |
 
 ## Typografie
 - **Lettertype:** Open Sans (Google Fonts)
@@ -21,7 +23,13 @@
 - Effect: `drop-shadow(0 8px 32px rgba(90, 140, 180, 0.18))`
 
 ## Achtergrond
-Effen wit (`#ffffff`), zodat het ingesloten Google Form één geheel vormt met de pagina.
+Lichte luchtige gradiënt via twee radiale cirkels:
+```css
+background:
+  radial-gradient(ellipse 120% 60% at 50% 110%, #b8d4e8 0%, transparent 60%),
+  radial-gradient(ellipse 80% 40% at 20% 0%, #d6e9f7 0%, transparent 50%);
+background-color: #f0f6fc;
+```
 
 ## Animaties
 - **Inkomend:** `floatIn` — elementen schuiven van `translateY(24px)` + `opacity: 0` naar zichtbaar, `0.9s cubic-bezier(0.22, 1, 0.36, 1)`
@@ -37,4 +45,4 @@ Effen wit (`#ffffff`), zodat het ingesloten Google Form één geheel vormt met d
 ## Tone of voice / copy
 - Taal: Nederlands (maar "Coming Soon" in het Engels)
 - Simpel en rustig — geen overbodige tekst
-- Paginatitel homepage: `Amorgos Lustrum`
+- Paginatitel: `Coming soon`

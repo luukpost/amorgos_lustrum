@@ -8,7 +8,7 @@ description: Amorgos Lustrum Project Conventions
 ## Project Overview
 Static website for the Amorgos sailing association's lustrum trip 2027.
 Domain: `lustrum.amorgos.nl` (GitHub Pages)
-Stack: Plain HTML + CSS, with a small amount of vanilla JavaScript only where interaction needs it (intro video). No frameworks, no build step.
+Stack: Plain HTML + CSS, with a small amount of vanilla JavaScript only where interaction needs it (easter eggs). No frameworks, no build step.
 **Design approach: Mobile-first.** All layouts and styles are designed for small screens first, then enhanced for larger screens using `min-width` media queries.
 
 ## File Structure
@@ -20,15 +20,15 @@ assets/
   css/
     main.css        # All global styles
   js/
-    intro.js        # Intro video on the homepage (sound toggle, skip, fade to page)
-uploads/            # Static assets (images, logo, intro.mp4)
+    easter-eggs.js  # Vanilla JS for the click animations
+uploads/            # Static assets (images, logo)
 .github/
   instructions/     # Agent instruction files
 ```
 
 ## HTML, CSS and JavaScript
 - Every page is a plain `.html` file in the root; write content directly in the HTML
-- Links between pages are normal links without `.html` (GitHub Pages serves `programma.html` at `/programma`), e.g. `<a href="/programma">`
+- Links between pages are normal links, e.g. `<a href="programma.html">`
 - No Vue, React or other frameworks, no router, no templating
 - JavaScript only for interaction that HTML/CSS cannot do; plain JS, loaded with `defer`, in `assets/js/`
 - Drafts: a page with `<script>window.location.replace('/');</script>` in the head is not live yet; remove that line to publish it
@@ -46,12 +46,14 @@ uploads/            # Static assets (images, logo, intro.mp4)
 - Color tokens (use these, do not invent new colors):
   - `#FFD200` — Primary yellow (text, accents)
   - `#E30613` — Secondary red (reserve)
-  - `#ffffff` — Page background (plain white, no gradient)
+  - `#f0f6fc` — Page background
+  - `#b8d4e8` — Gradient bottom
+  - `#d6e9f7` — Gradient top
 - Font: Open Sans 700/800 (Google Fonts CDN)
 - Responsive logo width: `min(560px, 90vw)`
 
 ## Naming Conventions
-- JS files: kebab-case, e.g. `menu-toggle.js`
+- JS files: kebab-case, e.g. `easter-eggs.js`
 - CSS classes: kebab-case, e.g. `.coming-soon`, `.logo-wrap`
 - Page files: lowercase kebab, e.g. `programma.html`, `contact.html`
 
