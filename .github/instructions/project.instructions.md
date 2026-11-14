@@ -8,37 +8,30 @@ description: Amorgos Lustrum Project Conventions
 ## Project Overview
 Static website for the Amorgos sailing association's lustrum trip 2027.
 Domain: `lustrum.amorgos.nl` (GitHub Pages)
-Stack: Vanilla HTML + CSS + Vue 3 (CDN) + Vue Router 4 (CDN) — no build step.
+Stack: Plain HTML + CSS, with a small amount of vanilla JavaScript only where interaction needs it (easter eggs). No frameworks, no build step.
 **Design approach: Mobile-first.** All layouts and styles are designed for small screens first, then enhanced for larger screens using `min-width` media queries.
 
 ## File Structure
 ```
-index.html          # App shell — loads CDN libs + src files
+index.html          # Coming soon page (static HTML)
+programma.html      # Programme page (draft, redirects to / until live)
+404.html            # Redirects to the homepage
 assets/
   css/
     main.css        # All global styles
-src/
-  app.js            # Vue app init + mount
-  router/
-    index.js        # Route definitions (hash history for GitHub Pages)
-  views/            # Page-level Vue components (plain JS objects, no SFC)
-  components/       # Reusable UI components (plain JS objects)
+  js/
+    easter-eggs.js  # Vanilla JS for the click animations
 uploads/            # Static assets (images, logo)
 .github/
   instructions/     # Agent instruction files
 ```
 
-## Vue Architecture (CDN, no build step)
-- Vue 3 and Vue Router 4 loaded from unpkg CDN (pinned versions)
-- Components are plain JS objects with `template` string, NOT Single File Components
-- All views live in `src/views/`, all reusable components in `src/components/`
-- `src/app.js` mounts the app; `src/router/index.js` defines routes
-- Script load order in index.html: components → views → router → app
-
-## Routing
-- Hash history (`createWebHashHistory`) — required for GitHub Pages static hosting
-- Route meta `title` drives `document.title` via `router.afterEach`
-- Add new routes in `src/router/index.js`
+## HTML, CSS and JavaScript
+- Every page is a plain `.html` file in the root; write content directly in the HTML
+- Links between pages are normal links, e.g. `<a href="programma.html">`
+- No Vue, React or other frameworks, no router, no templating
+- JavaScript only for interaction that HTML/CSS cannot do; plain JS, loaded with `defer`, in `assets/js/`
+- Drafts: a page with `<script>window.location.replace('/');</script>` in the head is not live yet; remove that line to publish it
 
 ## Mobile-First
 - **Always design for mobile first** — base styles target small screens (≥320px)
@@ -60,10 +53,9 @@ uploads/            # Static assets (images, logo)
 - Responsive logo width: `min(560px, 90vw)`
 
 ## Naming Conventions
-- View files: PascalCase JS objects, e.g. `ComingSoon.js`, `ProgramPage.js`
-- Component files: PascalCase, e.g. `NavBar.js`
+- JS files: kebab-case, e.g. `easter-eggs.js`
 - CSS classes: kebab-case, e.g. `.coming-soon`, `.logo-wrap`
-- Router paths: lowercase kebab, e.g. `/programma`, `/contact`
+- Page files: lowercase kebab, e.g. `programma.html`, `contact.html`
 
 ## Language
 - UI language: Dutch
@@ -73,5 +65,5 @@ uploads/            # Static assets (images, logo)
 ## Do NOT
 - Add a build system (webpack, vite, etc.) without explicit request
 - Use TypeScript — plain JS only
-- Use npm packages — CDN only
+- Add frameworks or libraries (Vue, React, jQuery, ...)
 - Commit or push without explicit user permission
