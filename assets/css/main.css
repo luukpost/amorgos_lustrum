@@ -72,7 +72,6 @@ body {
   font-weight: 700;
   font-size: clamp(14px, 3vw, 20px);
   color: #FFD200;
-  opacity: 0.75;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
