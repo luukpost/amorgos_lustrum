@@ -117,7 +117,7 @@ body {
   text-transform: uppercase;
   line-height: 1;
   color: #E30613;
-  background: #fff;
+  background: #FFFCF2; /* off-white */
   border: 3px solid #FFD200;
   border-radius: 999px;
   text-decoration: none;
