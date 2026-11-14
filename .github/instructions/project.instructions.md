@@ -8,7 +8,7 @@ description: Amorgos Lustrum Project Conventions
 ## Project Overview
 Static website for the Amorgos sailing association's lustrum trip 2027.
 Domain: `lustrum.amorgos.nl` (GitHub Pages)
-Stack: Plain HTML + CSS, with a small amount of vanilla JavaScript only where interaction needs it (easter eggs). No frameworks, no build step.
+Stack: Plain HTML + CSS. Vanilla JavaScript only if interaction ever needs it. No frameworks, no build step.
 **Design approach: Mobile-first.** All layouts and styles are designed for small screens first, then enhanced for larger screens using `min-width` media queries.
 
 ## File Structure
@@ -19,8 +19,6 @@ programma.html      # Programme page (draft, redirects to / until live)
 assets/
   css/
     main.css        # All global styles
-  js/
-    easter-eggs.js  # Vanilla JS for the click animations
 uploads/            # Static assets (images, logo)
 .github/
   instructions/     # Agent instruction files
@@ -53,7 +51,7 @@ uploads/            # Static assets (images, logo)
 - Responsive logo width: `min(560px, 90vw)`
 
 ## Naming Conventions
-- JS files: kebab-case, e.g. `easter-eggs.js`
+- JS files: kebab-case, e.g. `menu-toggle.js`
 - CSS classes: kebab-case, e.g. `.coming-soon`, `.logo-wrap`
 - Page files: lowercase kebab, e.g. `programma.html`, `contact.html`
 
