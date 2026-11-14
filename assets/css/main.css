@@ -253,14 +253,14 @@ body {
   text-transform: uppercase;
   color: #fff;
   background: rgba(0, 0, 0, 0.55);
-  border: 2px solid #fff;
+  border: 3px solid #FFD200;
   border-radius: 999px;
   cursor: pointer;
 }
 
 .intro-controls button:focus-visible,
 .intro-play:focus-visible {
-  outline: 3px solid #FFD200;
+  outline: 3px solid #fff;
   outline-offset: 3px;
 }
 
