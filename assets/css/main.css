@@ -103,7 +103,7 @@ body {
   background: #fff;
 }
 
-/* Grote gele knop op de homepage */
+/* Knop op de homepage: wit met gele rand en rode tekst */
 .cta-button {
   display: inline-flex;
   align-items: center;
@@ -116,8 +116,9 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1;
-  color: #000918;
-  background: #FFD200;
+  color: #E30613;
+  background: #fff;
+  border: 3px solid #FFD200;
   border-radius: 999px;
   text-decoration: none;
   box-shadow: 0 8px 32px rgba(90, 140, 180, 0.25);
@@ -134,7 +135,7 @@ body {
 }
 
 .cta-button:focus-visible {
-  outline: 3px solid #000918;
+  outline: 3px solid #E30613;
   outline-offset: 4px;
 }
 
