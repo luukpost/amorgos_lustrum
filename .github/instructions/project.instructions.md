@@ -8,7 +8,7 @@ description: Amorgos Lustrum Project Conventions
 ## Project Overview
 Static website for the Amorgos sailing association's lustrum trip 2027.
 Domain: `lustrum.amorgos.nl` (GitHub Pages)
-Stack: Plain HTML + CSS. Vanilla JavaScript only if interaction ever needs it. No frameworks, no build step.
+Stack: Plain HTML + CSS, with a small amount of vanilla JavaScript only where interaction needs it (intro video). No frameworks, no build step.
 **Design approach: Mobile-first.** All layouts and styles are designed for small screens first, then enhanced for larger screens using `min-width` media queries.
 
 ## File Structure
@@ -19,7 +19,9 @@ programma.html      # Programme page (draft, redirects to / until live)
 assets/
   css/
     main.css        # All global styles
-uploads/            # Static assets (images, logo)
+  js/
+    intro.js        # Intro video on the homepage (sound toggle, skip, fade to page)
+uploads/            # Static assets (images, logo, intro.mp4)
 .github/
   instructions/     # Agent instruction files
 ```

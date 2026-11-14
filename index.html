@@ -26,9 +26,19 @@
   <meta name="twitter:image" content="https://lustrum.amorgos.nl/uploads/logo_or_image-1776757967905.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css?v=13">
+  <link rel="stylesheet" href="assets/css/main.css?v=14">
 </head>
 <body>
+  <!-- Intro-filmpje: speelt bij openen, daarna verschijnt de homepage -->
+  <div class="intro" role="dialog" aria-label="Introfilmpje Lustrum 2027">
+    <video class="intro-video" src="uploads/intro.mp4" poster="uploads/intro-poster.jpg" muted autoplay playsinline preload="auto"></video>
+    <button type="button" class="intro-play" hidden>Afspelen</button>
+    <div class="intro-controls">
+      <button type="button" class="intro-sound" aria-pressed="false">Geluid aan</button>
+      <button type="button" class="intro-skip">Overslaan</button>
+    </div>
+  </div>
+
   <main class="container">
     <div class="content-block">
       <div class="logo-wrap">
@@ -43,5 +53,6 @@
     </div>
   </main>
 
+  <script src="assets/js/intro.js" defer></script>
 </body>
 </html>
