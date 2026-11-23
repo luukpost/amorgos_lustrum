@@ -275,32 +275,8 @@ body {
 
 /* ---------------------------------------------------------------
    Homepage: "Wat kan ik verwachten?" (veelgestelde vragen)
+   Vraag als zwarte kop, uitleg eronder; openklikken met een chevron
    --------------------------------------------------------------- */
-
-/* Link onder de knop die naar de vragen scrollt */
-.scroll-hint {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-weight: 700;
-  font-size: clamp(16px, 3.5vw, 20px);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #E30613;
-  text-decoration: none;
-}
-
-.scroll-hint::after {
-  content: "\2193";
-  margin-left: 0.4em;
-}
-
-.scroll-hint:focus-visible,
-.faq-item summary:focus-visible,
-.faq-item a:focus-visible {
-  outline: 3px solid #E30613;
-  outline-offset: 4px;
-}
 
 html {
   scroll-behavior: smooth;
@@ -311,9 +287,6 @@ html {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 20px clamp(48px, 10vh, 96px);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
 .faq-title {
@@ -324,14 +297,12 @@ html {
   text-align: center;
   color: #FFD200;
   line-height: 1.2;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .faq-item {
-  border: 3px solid #FFD200;
-  border-radius: 24px;
-  background: #FFFCF2;
-  color: #E30613;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  color: #000;
 }
 
 .faq-item summary {
@@ -340,9 +311,9 @@ html {
   justify-content: space-between;
   gap: 16px;
   min-height: 44px;
-  padding: 0.9em 1.2em;
-  font-weight: 800;
-  font-size: clamp(16px, 3.5vw, 19px);
+  padding: 1em 0;
+  font-weight: 700;
+  font-size: clamp(17px, 3.6vw, 20px);
   line-height: 1.3;
   cursor: pointer;
   list-style: none;
@@ -352,22 +323,34 @@ html {
   display: none;
 }
 
+/* Chevron: wijst omlaag, draait om als de vraag open is */
 .faq-item summary::after {
-  content: "+";
+  content: "";
   flex-shrink: 0;
-  font-size: 1.4em;
-  line-height: 1;
+  width: 0.55em;
+  height: 0.55em;
+  margin-right: 0.2em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-25%) rotate(45deg);
+  transition: transform 0.2s ease;
 }
 
 .faq-item[open] summary::after {
-  content: "\2212";
+  transform: translateY(25%) rotate(-135deg);
+}
+
+.faq-item summary:focus-visible,
+.faq-item a:focus-visible {
+  outline: 3px solid #E30613;
+  outline-offset: 4px;
 }
 
 .faq-item p {
-  padding: 0 1.2em 1.1em;
-  font-weight: 700;
-  font-size: clamp(15px, 3.2vw, 17px);
-  line-height: 1.55;
+  padding: 0 0 1.2em;
+  font-weight: 400;
+  font-size: clamp(16px, 3.4vw, 18px);
+  line-height: 1.6;
 }
 
 .faq-item a {
@@ -377,5 +360,5 @@ html {
 .faq-cta {
   display: flex;
   justify-content: center;
-  margin-top: 24px;
+  margin-top: 40px;
 }
