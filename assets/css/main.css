@@ -369,3 +369,60 @@ html {
   justify-content: flex-start;
   padding: 48px 20px;
 }
+
+/* ---------------------------------------------------------------
+   Homepage op mobiel: compacter, datum en vragen-kop op één regel.
+   De tekst schaalt mee met de schermbreedte (min. 320px), zodat hij
+   precies binnen de 2x20px padding past.
+   --------------------------------------------------------------- */
+
+.hero .content-block {
+  gap: 24px;
+}
+
+.subtitle-home {
+  font-size: min(calc((100vw - 40px) / 19), 30px);
+  white-space: nowrap;
+}
+
+.subtitle-home span,
+.subtitle-home .subtitle-sep {
+  display: inline;
+}
+
+.faq-title {
+  font-size: min(calc((100vw - 40px) / 15.5), 36px);
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+
+.faq-item summary {
+  padding: 0.75em 0;
+}
+
+.faq-item p {
+  padding-bottom: 1em;
+}
+
+@media (min-width: 640px) {
+  .hero .content-block {
+    gap: clamp(28px, 6vh, 56px);
+  }
+
+  .subtitle-home {
+    font-size: clamp(21px, 4.5vw, 30px);
+  }
+
+  .faq-title {
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 16px;
+  }
+
+  .faq-item summary {
+    padding: 1em 0;
+  }
+
+  .faq-item p {
+    padding-bottom: 1.2em;
+  }
+}
