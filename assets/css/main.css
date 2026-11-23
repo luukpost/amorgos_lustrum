@@ -362,3 +362,10 @@ html {
   justify-content: center;
   margin-top: 40px;
 }
+
+/* Homepage: logo 48px onder de bovenkant, vragen 48px onder de knop */
+.hero {
+  min-height: 0;
+  justify-content: flex-start;
+  padding: 48px 20px;
+}
